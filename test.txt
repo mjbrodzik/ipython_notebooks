@@ -1,0 +1,7 @@
+total 32
+ 0 drwxr-xr-x    6 brodzik  _softwareupdate    204 May 15 15:49 .
+ 0 drwxr-xr-x@ 276 brodzik  _softwareupdate   9384 May 15 15:48 ..
+ 0 drwxr-xr-x   13 brodzik  _softwareupdate    442 May 15 15:48 .git
+24 -rw-r--r--    1 brodzik  _softwareupdate  11358 May 15 15:48 LICENSE
+ 8 -rw-r--r--    1 brodzik  _softwareupdate    100 May 15 15:48 README.md
+ 0 -rw-r--r--    1 brodzik  _softwareupdate      0 May 15 15:49 test.txt
