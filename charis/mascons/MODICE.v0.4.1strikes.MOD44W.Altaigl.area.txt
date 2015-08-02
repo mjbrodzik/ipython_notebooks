@@ -1,0 +1,16 @@
+ Year Numtiles Num_w_modice         Region    MODICE_area_km^2      MODICE_NS_km^2          water_km^2
+ 2000       58            2        Altaigl               837.2                 0.0               822.6
+ 2001       58            2        Altaigl               659.0                 0.0               822.6
+ 2002       58            2        Altaigl               628.7                 0.0               822.6
+ 2003       58            2        Altaigl               591.0                 0.0               822.6
+ 2004       58            2        Altaigl               614.8                 0.0               822.6
+ 2005       58            2        Altaigl               706.0                 0.0               822.6
+ 2006       58            2        Altaigl               671.7                 0.0               822.6
+ 2007       58            2        Altaigl               565.8                 0.0               822.6
+ 2008       58            2        Altaigl               447.1                 0.0               822.6
+ 2009       58            2        Altaigl              1131.3                 0.0               822.6
+ 2010       58            2        Altaigl               776.2                 0.0               822.6
+ 2011       58            2        Altaigl               438.8                 0.0               822.6
+ 2012       58            2        Altaigl               365.1                 0.0               822.6
+ 2013       58            2        Altaigl               986.1                 0.0               822.6
+ 2014       58            2        Altaigl               662.4                 0.0               822.6

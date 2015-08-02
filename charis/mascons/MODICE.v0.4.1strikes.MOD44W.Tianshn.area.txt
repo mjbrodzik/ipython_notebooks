@@ -1,0 +1,16 @@
+ Year Numtiles Num_w_modice         Region    MODICE_area_km^2      MODICE_NS_km^2          water_km^2
+ 2000       58            2        Tianshn             12157.0                 0.0              1030.1
+ 2001       58            2        Tianshn              9522.0                 0.0              1030.1
+ 2002       58            2        Tianshn              9409.3                 0.0              1030.1
+ 2003       58            2        Tianshn              9954.4                 0.0              1030.1
+ 2004       58            2        Tianshn              9548.0                 0.0              1030.1
+ 2005       58            2        Tianshn             10030.6                 0.0              1030.1
+ 2006       58            2        Tianshn              7943.9                 0.0              1030.1
+ 2007       58            2        Tianshn              7846.0                 0.0              1030.1
+ 2008       58            2        Tianshn              7567.8                 0.0              1030.1
+ 2009       58            2        Tianshn             13225.8                 0.0              1030.1
+ 2010       58            2        Tianshn              9049.6                 0.0              1030.1
+ 2011       58            2        Tianshn              8845.9                 0.0              1030.1
+ 2012       58            2        Tianshn              7339.2                 0.0              1030.1
+ 2013       58            2        Tianshn              7895.1                 0.0              1030.1
+ 2014       58            2        Tianshn              7056.5                 0.0              1030.1
