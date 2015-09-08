@@ -1,0 +1,14 @@
+modscag_gf by elevation and fng_sca (fractional non-glaciated area) files.
+
+v01 created spring 2014, by
+
+charis/idl/gen_hypsometry/basin_snow_covered_area_by_elev.pro
+and
+charis/idl/gen_hypsometry/basin_fng_sca_by_elev.pro
+
+from input modscag_gf tile data from Karl.
+
+sca files are km^2 by elevation and date
+fng_sca files are percent snow-cover in non-glaciated part of basin.
+
+-MJB
