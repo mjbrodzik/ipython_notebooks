@@ -1,0 +1,1075 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass{article}
+
+    
+    
+    \usepackage{graphicx} % Used to insert images
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{color} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    
+
+    
+    
+    \definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
+    \definecolor{darkorange}{rgb}{.71,0.21,0.01}
+    \definecolor{darkgreen}{rgb}{.12,.54,.11}
+    \definecolor{myteal}{rgb}{.26, .44, .56}
+    \definecolor{gray}{gray}{0.45}
+    \definecolor{lightgray}{gray}{.95}
+    \definecolor{mediumgray}{gray}{.8}
+    \definecolor{inputbackground}{rgb}{.95, .95, .85}
+    \definecolor{outputbackground}{rgb}{.95, .95, .95}
+    \definecolor{traceback}{rgb}{1, .95, .95}
+    % ansi colors
+    \definecolor{red}{rgb}{.6,0,0}
+    \definecolor{green}{rgb}{0,.65,0}
+    \definecolor{brown}{rgb}{0.6,0.6,0}
+    \definecolor{blue}{rgb}{0,.145,.698}
+    \definecolor{purple}{rgb}{.698,.145,.698}
+    \definecolor{cyan}{rgb}{0,.698,.698}
+    \definecolor{lightgray}{gray}{0.5}
+    
+    % bright ansi colors
+    \definecolor{darkgray}{gray}{0.25}
+    \definecolor{lightred}{rgb}{1.0,0.39,0.28}
+    \definecolor{lightgreen}{rgb}{0.48,0.99,0.0}
+    \definecolor{lightblue}{rgb}{0.53,0.81,0.92}
+    \definecolor{lightpurple}{rgb}{0.87,0.63,0.87}
+    \definecolor{lightcyan}{rgb}{0.5,1.0,0.83}
+    
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Brodzik\_assignment1}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=blue,
+      linkcolor=darkorange,
+      citecolor=darkgreen,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \subsubsection{GEOG827}\label{geog827}
+
+\subsubsection{Assignment \#1}\label{assignment-1}
+
+\subsubsection{M. J. Brodzik}\label{m.-j.-brodzik}
+
+\subsubsection{due 3/12/17}\label{due-31217}
+
+\subsection{Question 1}\label{question-1}
+
+Using the tables and/or equations in the ``Calculating Evaporation''
+documents posted in blackboard, notes and/or other sources (state the
+source), express results as mean W/m2 over the day.
+
+\subsection{Q1. Part 1}\label{q1.-part-1}
+
+Part i) estimate the daily average solar radiation to the top of the
+Earth's atmosphere at 56oN on July 2nd.
+
+Total daily solar radiation to top of the atmosphere (TOA) is a function
+of latitude, season and time of day. From Table D, ``Calculating
+Evaporation Notes'', the Total daily solar radiation,
+\(K_A\ [W m^{-2}]\), is given in 10-degree latitude increments, for Jun
+22 and Jul 15. I begin by plotting these to see how much variability
+there is in \(K_A\):
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{o}{\PYZpc{}}\PY{k}{pylab} inline
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib.pyplot} \PY{k+kn}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
+        
+        \PY{c}{\PYZsh{} Define data to plot}
+        \PY{n}{lats} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{10}
+        \PY{n}{jun22} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{382.68}\PY{p}{,} \PY{l+m+mf}{422.88}\PY{p}{,} \PY{l+m+mf}{452.91}\PY{p}{,} \PY{l+m+mf}{472.29}\PY{p}{,} \PY{l+m+mf}{480.04}\PY{p}{,}
+                          \PY{l+m+mf}{479.07}\PY{p}{,} \PY{l+m+mf}{474.23}\PY{p}{,} \PY{l+m+mf}{490.21}\PY{p}{,} \PY{l+m+mf}{513.46}\PY{p}{,} \PY{l+m+mf}{521.70}\PY{p}{]}\PY{p}{)}
+        \PY{n}{jul15} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{387.52}\PY{p}{,} \PY{l+m+mf}{424.82}\PY{p}{,} \PY{l+m+mf}{450.49}\PY{p}{,} \PY{l+m+mf}{465.02}\PY{p}{,} \PY{l+m+mf}{468.41}\PY{p}{,}
+                          \PY{l+m+mf}{462.12}\PY{p}{,} \PY{l+m+mf}{450.01}\PY{p}{,} \PY{l+m+mf}{452.43}\PY{p}{,} \PY{l+m+mf}{474.71}\PY{p}{,} \PY{l+m+mf}{481.49}\PY{p}{]}\PY{p}{)}
+        
+        \PY{c}{\PYZsh{} Make the plot:}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{rc}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{text}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{usetex}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+        \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{lats}\PY{p}{,} \PY{n}{jun22}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{co}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{jun22}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{lats}\PY{p}{,} \PY{n}{jul15}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{bo}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{jul15}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Total daily solar radiation to horizontal surface at TOA}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Latitude}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{r\PYZsq{}}\PY{l+s}{\PYZdl{}K\PYZus{}A (W m\PYZca{}\PYZob{}\PYZhy{}2\PYZcb{})\PYZdl{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{best}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{numpoints}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+        \PY{n}{fig}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{HW1.1i\PYZus{}fig1.png}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Populating the interactive namespace from numpy and matplotlib
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+/Users/brodzik/.conda/envs/pmesdr/lib/python2.7/site-packages/matplotlib/font\_manager.py:273: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
+  warnings.warn('Matplotlib is building the font cache using fc-list. This may take a moment.')
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brodzik_assignment1_files/Brodzik_assignment1_1_2.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    So although there is an inflection point in the data above 60N, for an
+estimate I think it's sufficient to just linearly interpolate \(K_A\)
+for the given dates to a value for Jul 2, and then interpolate to
+56\(^{\circ}\) N.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{c}{\PYZsh{} define a quick linear interpolation function}
+        \PY{c}{\PYZsh{} calculate slope and intercept and the value of the line at }
+        \PY{c}{\PYZsh{} the new value}
+        \PY{k}{def} \PY{n+nf}{linear\PYZus{}model\PYZus{}value\PYZus{}at}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{x1}\PY{p}{,} \PY{n}{y1}\PY{p}{,} \PY{n}{x2}\PY{p}{,} \PY{n}{y2}\PY{p}{)}\PY{p}{:}
+            \PY{n}{slope} \PY{o}{=} \PY{p}{(}\PY{n}{y2} \PY{o}{\PYZhy{}} \PY{n}{y1}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{x2} \PY{o}{\PYZhy{}} \PY{n}{x1}\PY{p}{)}
+            \PY{c}{\PYZsh{} y = mx + b ==\PYZgt{} b = y \PYZhy{} mx}
+            \PY{n}{intercept} \PY{o}{=}  \PY{n}{y1} \PY{o}{\PYZhy{}} \PY{p}{(}\PY{n}{slope} \PY{o}{*} \PY{n}{x1}\PY{p}{)}
+            \PY{k}{return} \PY{p}{(}\PY{n}{slope} \PY{o}{*} \PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{n}{intercept}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{KA\PYZus{}56N\PYZus{}jun22} \PY{o}{=} \PY{n}{linear\PYZus{}model\PYZus{}value\PYZus{}at}\PY{p}{(}\PY{l+m+mf}{56.}\PY{p}{,} \PY{l+m+mf}{50.}\PY{p}{,} \PY{l+m+mf}{479.07}\PY{p}{,} \PY{l+m+mf}{60.}\PY{p}{,} \PY{l+m+mf}{474.23}\PY{p}{)}
+        \PY{n}{KA\PYZus{}56N\PYZus{}jul15} \PY{o}{=} \PY{n}{linear\PYZus{}model\PYZus{}value\PYZus{}at}\PY{p}{(}\PY{l+m+mf}{56.}\PY{p}{,} \PY{l+m+mf}{50.}\PY{p}{,} \PY{l+m+mf}{462.12}\PY{p}{,} \PY{l+m+mf}{60.}\PY{p}{,} \PY{l+m+mf}{450.01}\PY{p}{)}
+\end{Verbatim}
+
+    Linearly interpolate \(K_A\) at 56 N to July 2 between Jun22 and Jul15:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{import} \PY{n+nn}{datetime}
+        \PY{n}{jun22\PYZus{}doy} \PY{o}{=} \PY{n}{datetime}\PY{o}{.}\PY{n}{datetime}\PY{p}{(}\PY{l+m+mi}{2017}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{22}\PY{p}{)}\PY{o}{.}\PY{n}{timetuple}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{tm\PYZus{}yday}
+        \PY{n}{jul2\PYZus{}doy} \PY{o}{=} \PY{n}{datetime}\PY{o}{.}\PY{n}{datetime}\PY{p}{(}\PY{l+m+mi}{2017}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}\PY{o}{.}\PY{n}{timetuple}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{tm\PYZus{}yday}
+        \PY{n}{jul15\PYZus{}doy} \PY{o}{=} \PY{n}{datetime}\PY{o}{.}\PY{n}{datetime}\PY{p}{(}\PY{l+m+mi}{2017}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{,} \PY{l+m+mi}{15}\PY{p}{)}\PY{o}{.}\PY{n}{timetuple}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{tm\PYZus{}yday}
+        \PY{k}{print}\PY{p}{(}\PY{n}{jun22\PYZus{}doy}\PY{p}{,} \PY{n}{jul2\PYZus{}doy}\PY{p}{,} \PY{n}{jul15\PYZus{}doy}\PY{p}{)}
+        
+        \PY{n}{KA\PYZus{}56N\PYZus{}jul2} \PY{o}{=} \PY{n}{linear\PYZus{}model\PYZus{}value\PYZus{}at}\PY{p}{(}\PY{n}{jul2\PYZus{}doy}\PY{p}{,} 
+                                            \PY{n}{jun22\PYZus{}doy}\PY{p}{,} \PY{n}{KA\PYZus{}56N\PYZus{}jun22}\PY{p}{,}
+                                            \PY{n}{jul15\PYZus{}doy}\PY{p}{,} \PY{n}{KA\PYZus{}56N\PYZus{}jul15}\PY{p}{)}
+        \PY{n}{KA\PYZus{}56N\PYZus{}jul2}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+(173, 183, 196)
+    \end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}4}]:} 466.8999130434783
+\end{Verbatim}
+        
+    Adding my interpolated values to the plot, I think it's sufficient to
+use this approximation:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+        
+        \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{lats}\PY{p}{,} \PY{n}{jun22}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{co}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{jun22}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{lats}\PY{p}{,} \PY{n}{jul15}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{bo}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{jul15}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{l+m+mi}{56}\PY{p}{,} \PY{n}{KA\PYZus{}56N\PYZus{}jun22}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{cx}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{jun22 @ 56N}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{l+m+mi}{56}\PY{p}{,} \PY{n}{KA\PYZus{}56N\PYZus{}jul15}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{bx}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{jul15 @ 56N}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{l+m+mi}{56}\PY{p}{,} \PY{n}{KA\PYZus{}56N\PYZus{}jul2}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{kx}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{jul2 @ 56N}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{annotate}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdl{}K\PYZus{}A\PYZdl{} at 56 N on Jul 2 = }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{ \PYZdl{}W m\PYZca{}\PYZob{}\PYZhy{}2\PYZcb{}\PYZdl{}}\PY{l+s}{\PYZsq{}} \PY{o}{\PYZpc{}} \PY{n}{KA\PYZus{}56N\PYZus{}jul2}\PY{p}{,} 
+                    \PY{n}{xy}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{56}\PY{p}{,} \PY{n}{KA\PYZus{}56N\PYZus{}jul2}\PY{p}{)}\PY{p}{,} 
+                    \PY{n}{xytext}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{,} \PY{l+m+mi}{430}\PY{p}{)}\PY{p}{,}
+                    \PY{n}{arrowprops}\PY{o}{=}\PY{n+nb}{dict}\PY{p}{(}\PY{n}{facecolor}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{k}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{shrink}\PY{o}{=}\PY{l+m+mf}{0.05}\PY{p}{)}\PY{p}{)}
+        
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Total daily solar radiation to horizontal surface at TOA}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Latitude}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{r\PYZsq{}}\PY{l+s}{\PYZdl{}K\PYZus{}A (W m\PYZca{}\PYZob{}\PYZhy{}2\PYZcb{})\PYZdl{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{bbox\PYZus{}to\PYZus{}anchor}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{1.05}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{loc}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{borderaxespad}\PY{o}{=}\PY{l+m+mf}{0.}\PY{p}{,} \PY{n}{numpoints}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+        \PY{n}{fig}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{HW1.1i\PYZus{}fig2.png}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brodzik_assignment1_files/Brodzik_assignment1_8_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    So the estimated daily average solar radiation to the top of the Earth's
+atmosphere at 56\(^{\circ}\) N on July 2nd is 466.90 \(W m^{-2}\).
+
+    \subsection{Q1. Part ii}\label{q1.-part-ii}
+
+ii) if there are 7 hours of bright sunshine, what is the average
+incoming solar radiation to the surface of a flat unvegetated field at
+this location on this day?
+
+    Eq 7. from ``Calculating Evaporation Notes'' gives the equation for mean
+incoming shortwave radiation \(K\downarrow [W m^{-2}]\) as:
+
+\(K\downarrow = K_A[a + b(\frac{n}{N})]\)
+
+Looking at latitudes of locations in Table B, I think the closest
+location would be that of Central SK, Canada from Mudiare(1985). I will
+use the rainfree values for a and b.
+
+Let:
+
+Estimate N from Table C, values given for latitude=56N, interpolate
+values from Jul1 - Jul5 to a value for Jul2, and remember to convert
+(hours,minutes) to decimal hours)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{N} \PY{o}{=} \PY{n}{linear\PYZus{}model\PYZus{}value\PYZus{}at}\PY{p}{(}\PY{l+m+mf}{2.}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mf}{17.} \PY{o}{+} \PY{p}{(}\PY{l+m+mf}{31.}\PY{o}{/}\PY{l+m+mf}{60.}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mf}{17.} \PY{o}{+} \PY{p}{(}\PY{l+m+mf}{25.}\PY{o}{/}\PY{l+m+mf}{60.}\PY{p}{)}\PY{p}{)}
+        \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Estimate of N at 56N on Jul 2 is: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{N}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Estimate of N at 56N on Jul 2 is: 17.49
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{a} \PY{o}{=} \PY{l+m+mf}{0.27}
+        \PY{n}{b} \PY{o}{=} \PY{l+m+mf}{0.47}
+        \PY{n}{n} \PY{o}{=} \PY{l+m+mf}{7.}
+        \PY{n}{K\PYZus{}down} \PY{o}{=} \PY{n}{KA\PYZus{}56N\PYZus{}jul2} \PY{o}{*} \PY{p}{(}\PY{n}{a} \PY{o}{+} \PY{n}{b} \PY{o}{*} \PY{p}{(}\PY{n}{n}\PY{o}{/}\PY{n}{N}\PY{p}{)}\PY{p}{)}
+        \PY{n}{K\PYZus{}down}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}7}]:} 213.881978746401
+\end{Verbatim}
+        
+    So with 7 hours of direct sunshine at this location, the mean incoming
+solar radiation to the surface of a flat unvegetated field at about
+56\(^{\circ}\) N on July 2nd is 213.88 \(W m^{-2}\). So atmospheric
+transmittance reduces the shortwave by more than half of that reaching
+TOA.
+
+    \subsection{Q1. Part iii}\label{q1.-part-iii}
+
+iii) if the mean daily air temperature is 15°C and the mean daily
+relative humidity is 70\%, what is the daily average clear sky incoming
+longwave radiation and what is the actual daily average incoming
+longwave radiation to this field?
+
+From our class notes, incoming longwave clear sky radiation from the
+atmosphere, \(L_{0,clear} [W m^{-2}]\), is expressed by the
+Stephan-Boltzmann Law:
+
+\(L_{0,clear} = \varepsilon_{clear}(T,e) \sigma T^4\)
+
+Where apparent clear-sky emissivity, \(\varepsilon_{clear}\), is a
+function of air temperature near the ground, \(T [K]\), and water vapour
+pressure, \(e [mb]\), near the ground. Brutsaert(1975) derived an
+empirical relationship for \(\varepsilon_{clear}\) as a function of
+\(T\) and \(e\):
+
+\[\varepsilon_{clear} = C(\frac{e}{T})^{1/m}\]
+
+where:
+
+\(T\) = air temperature, \([K]\)\\
+\(e\) = vapour pressure near the ground, \([mb]\)\\
+\(C\) = 1.24\\
+\(m\) = 7
+
+From lectures, I can use the Magnus Formula to approximate saturated
+water vapour pressure \(e_s [hPa=mb]\), at 15-deg C:
+
+\(e_s [mb] = 6.1094 \exp{\frac{17.625 T}{T + 243.04}}\)
+
+where: \(T\) = air temperature \([°C] = 15.\)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{T\PYZus{}C} \PY{o}{=} \PY{l+m+mf}{15.} \PY{c}{\PYZsh{} air temperature, degrees C}
+        \PY{n}{es\PYZus{}15C} \PY{o}{=} \PY{l+m+mf}{6.1094} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{p}{(}\PY{l+m+mf}{17.625} \PY{o}{*} \PY{n}{T\PYZus{}C}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{T\PYZus{}C} \PY{o}{+} \PY{l+m+mf}{243.04}\PY{p}{)}\PY{p}{)}
+        \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Saturated water vapour pressure at 15°C is }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{ mb}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{es\PYZus{}15C}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Saturated water vapour pressure at 15°C is 17.02 mb
+    \end{Verbatim}
+
+    So water vapour pressure near the ground, \(e [mb]\), is 70\% of
+\(e_s(T=15°C)\):
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{RH} \PY{o}{=} \PY{l+m+mi}{70}
+        \PY{n}{e} \PY{o}{=} \PY{n}{RH} \PY{o}{/} \PY{l+m+mf}{100.} \PY{o}{*} \PY{n}{es\PYZus{}15C}
+        \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Water vapour pressure near the ground is }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{ mb}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{e}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Water vapour pressure near the ground is 11.91 mb
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{c}{\PYZsh{} For the Brutsaert equation, temperature needs to be in Kelvins, so convert 15C to Kelvins}
+         \PY{n}{T\PYZus{}K} \PY{o}{=} \PY{n}{T\PYZus{}C} \PY{o}{+} \PY{l+m+mf}{273.15}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Air temperature = }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{ K}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{T\PYZus{}K}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Air temperature = 288.15 K
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{C} \PY{o}{=} \PY{l+m+mf}{1.24}
+         \PY{n}{m} \PY{o}{=} \PY{l+m+mf}{7.}
+         \PY{n}{e\PYZus{}clear} \PY{o}{=} \PY{n}{C} \PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{n}{e} \PY{o}{/} \PY{n}{T\PYZus{}K}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{m}\PY{p}{)}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Clear sky emissivity (using Brutsaert}\PY{l+s}{\PYZsq{}}\PY{l+s}{s formula) is }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{e\PYZus{}clear}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Clear sky emissivity (using Brutsaert's formula) is 0.79
+    \end{Verbatim}
+
+    So using the Stephan-Boltzmann Law, let:
+
+\(\varepsilon_{clear}(T=15°C,e=11.91mb)\) = 0.79\\
+\(\sigma\) = 5.67 x \(10^{-8} W m^{-2} K^{-4}\)\\
+\(T\) = 288.15 \(K\)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{sigma} \PY{o}{=} \PY{l+m+mf}{5.67e\PYZhy{}08}
+         \PY{n}{longwave\PYZus{}clearsky} \PY{o}{=} \PY{n}{e\PYZus{}clear} \PY{o}{*} \PY{n}{sigma} \PY{o}{*} \PY{n}{T\PYZus{}K}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Incoming longwave clearsky }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{ [W/m\PYZca{}2]}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{longwave\PYZus{}clearsky}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Incoming longwave clearsky 307.49 [W/m\^{}2]
+    \end{Verbatim}
+
+    So I estimate daily average clear sky incoming longwave radiation,
+\(L\downarrow\), to be 307.49 \(W m^{-2}\), which is greater than the
+incoming shortwave from part i).
+
+    For the actual daily average incoming longwave radiation to this field,
+since it there are only 7 hours of bright sunshine, I think the actual
+atmospheric emissivity will need to be adjusted upward, to account for
+increased emission from the clouds. I will use the adjustment used in
+Sicart et al 2006, equation (9). The adjustment for emissivity from
+clouds is:
+
+\[\varepsilon_{cloudy} = \varepsilon_{clear}(1 + 0.44 RH - 0.18 \tau_{atm})\]
+
+where:
+
+\(RH\) = relative humidity (as a percent)\\
+\(\tau_{atm}\) = shortwave transmissivity of the atmosphere
+
+Shortwave atmospheric transmissivity is the ratio of my answers from
+part i) and ii):
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{tau\PYZus{}atm} \PY{o}{=} \PY{n}{K\PYZus{}down} \PY{o}{/} \PY{n}{KA\PYZus{}56N\PYZus{}jul2}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{KA = }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{, K\PYZus{}down = }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{, tau\PYZus{}atm = }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}}\PY{p}{(}
+                 \PY{n}{KA\PYZus{}56N\PYZus{}jul2}\PY{p}{,} \PY{n}{K\PYZus{}down}\PY{p}{,} \PY{n}{tau\PYZus{}atm}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+KA = 466.90, K\_down = 213.88, tau\_atm = 0.46
+    \end{Verbatim}
+
+    So using emissivity of the cloudy atmosphere in Stephan-Boltzmann:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{e\PYZus{}cloudy} \PY{o}{=} \PY{n}{e\PYZus{}clear} \PY{o}{*} \PY{p}{(}\PY{l+m+mf}{1.} \PY{o}{+} \PY{l+m+mf}{0.44} \PY{o}{*} \PY{p}{(}\PY{n}{RH}\PY{o}{/}\PY{l+m+mf}{100.}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mf}{0.18}\PY{o}{*} \PY{p}{(}\PY{n}{tau\PYZus{}atm}\PY{p}{)}\PY{p}{)}
+         \PY{n}{longwave\PYZus{}cloudysky} \PY{o}{=} \PY{n}{e\PYZus{}cloudy} \PY{o}{*} \PY{n}{sigma} \PY{o}{*} \PY{n}{T\PYZus{}K}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Clear\PYZhy{}sky emissivity }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{e\PYZus{}clear}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Cloudy\PYZhy{}sky emissivity }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{e\PYZus{}cloudy}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Incoming longwave radiation }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{longwave\PYZus{}cloudysky}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Clear-sky emissivity 0.79
+Cloudy-sky emissivity 0.96
+Incoming longwave radiation 376.84
+    \end{Verbatim}
+
+    So this matches my expectation from class notes that
+\(\varepsilon_{clear} < \varepsilon_{cloudy}\), and I estimate actual
+daily average incoming longwave radiation to this field as 376.84
+\(W m^{-2}\).
+
+    \subsection{Q1. Part iv}\label{q1.-part-iv}
+
+iv) if the surface temperature is 20°C and albedo is 0.15 what is the
+average net radiation over the day?
+
+The average net radiation over the day is the sum of net shortwave and
+net longwave:
+
+\[Q^\ast = K^\ast - L^\ast = K\downarrow(1 - \alpha) + L\downarrow - L\uparrow\]
+
+where:\\
+\(K^\ast\) = net shortwave\\
+\(L^\ast\) = net longwave\\
+\(K\downarrow\) = incoming shortwave\\
+\(\alpha\) = shortwave albedo\\
+\(L\downarrow\) = incoming longwave\\
+\(L\uparrow\) = outgoing longwave from the terrain surface
+
+Air temperature is not a factor for the incoming shortwave, so I can use
+incoming shortwave from part ii:
+
+\(K\downarrow = 213.88 W m^{-2}\)\\
+\(\alpha = 0.15\)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{albedo} \PY{o}{=} \PY{l+m+mf}{0.15}
+         \PY{n}{K\PYZus{}net} \PY{o}{=} \PY{n}{K\PYZus{}down} \PY{o}{*} \PY{p}{(}\PY{l+m+mf}{1.} \PY{o}{\PYZhy{}} \PY{n}{albedo}\PY{p}{)}
+         \PY{n}{K\PYZus{}net}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}15}]:} 181.79968193444083
+\end{Verbatim}
+        
+    And adjust the incoming longwave from part iii for the higher
+temperature:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{T\PYZus{}C} \PY{o}{=} \PY{l+m+mf}{20.} \PY{c}{\PYZsh{} air temperature, degrees C}
+         \PY{n}{T\PYZus{}K} \PY{o}{=} \PY{n}{T\PYZus{}C} \PY{o}{+} \PY{l+m+mf}{273.15}
+         \PY{n}{e\PYZus{}clear\PYZus{}20} \PY{o}{=} \PY{n}{C} \PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{n}{e} \PY{o}{/} \PY{n}{T\PYZus{}K}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mf}{1.}\PY{o}{/}\PY{n}{m}\PY{p}{)}\PY{p}{)} \PY{c}{\PYZsh{} clear sky emission at T=20}
+         \PY{n}{e\PYZus{}cloudy\PYZus{}20} \PY{o}{=} \PY{n}{e\PYZus{}clear\PYZus{}20} \PY{o}{*} \PY{p}{(}\PY{l+m+mf}{1.} \PY{o}{+} \PY{l+m+mf}{0.44} \PY{o}{*} \PY{p}{(}\PY{n}{RH}\PY{o}{/}\PY{l+m+mf}{100.}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mf}{0.18}\PY{o}{*} \PY{p}{(}\PY{n}{tau\PYZus{}atm}\PY{p}{)}\PY{p}{)}
+         \PY{n}{longwave\PYZus{}cloudysky\PYZus{}20} \PY{o}{=} \PY{n}{e\PYZus{}cloudy\PYZus{}20} \PY{o}{*} \PY{n}{sigma} \PY{o}{*} \PY{n}{T\PYZus{}K}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4} \PY{c}{\PYZsh{} W/m\PYZca{}2}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Incoming longwave radiation for T=20°C is now }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{ W/m\PYZca{}2}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{longwave\PYZus{}cloudysky\PYZus{}20}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Incoming longwave radiation for T=20°C is now 402.69 W/m\^{}2
+    \end{Verbatim}
+
+    Outgoing longwave is longwave emission from the terrain surface. I use
+the Stephan-Boltzmann equation, assuming albedo of the terrain is close
+to 1, say 0.98, and that the air temperature is an adequate estimate for
+the surface temperature:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{surface\PYZus{}emissivity} \PY{o}{=} \PY{l+m+mf}{0.98}
+         \PY{n}{longwave\PYZus{}up} \PY{o}{=} \PY{l+m+mf}{0.98} \PY{o}{*} \PY{n}{sigma} \PY{o}{*} \PY{n}{T\PYZus{}K}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4} \PY{c}{\PYZsh{} W/m\PYZca{}2}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Outgoing longwave radiation from surface for T=20°C is }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{ W/m\PYZca{}2}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}}
+               \PY{n}{longwave\PYZus{}up}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Outgoing longwave radiation from surface for T=20°C is 410.36 W/m\^{}2
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{net} \PY{o}{=} \PY{n}{K\PYZus{}net} \PY{o}{+} \PY{n}{longwave\PYZus{}cloudysky\PYZus{}20} \PY{o}{\PYZhy{}} \PY{n}{longwave\PYZus{}up}
+         \PY{k}{print}\PY{p}{(}\PY{n}{K\PYZus{}net}\PY{p}{,} \PY{n}{longwave\PYZus{}cloudysky\PYZus{}20}\PY{p}{,} \PY{n}{longwave\PYZus{}up}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Net\PYZus{}radiation for T=20 is }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{net}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+(181.79968193444083, 402.69262523294549, 410.3635032136096)
+Net\_radiation for T=20 is 174.13
+    \end{Verbatim}
+
+    So I estimate average net radiation in this location over the day to be
+159.67 \(W m^{-2}\).
+
+    \subsection{Q1. Part v}\label{q1.-part-v}
+
+v) what would the daily average incoming solar radiation and incoming
+longwave radiation fluxes be to the sub-canopy floor under an adjacent
+pine canopy at this location on this day, if the pine canopy had a leaf
+area index of 2.1 and a sky view factor of 0.2? If the sub-canopy
+surface temperature and albedo are the same as in the field, what is the
+sub-canopy net radiation?
+
+Per Pomeroy and Dion, 1996, the transmittance through a forest canopy
+can be modeled with an extinction coefficient:
+
+\[\tau = exp^{\frac{-Q_{ext}\ {LAI}'}{\sin\theta}}\]
+
+where:
+
+\(\tau\) = transmittance through forest canopy\\
+\(Q_{ext}\) = extinction efficiency (dimensionless)\\
+\(LAI'\) = effective winter leaf area index\\
+\(\theta\) = solar angle above the horizon
+
+From Pomeroy lecture on Day 1, slide 42, apparently \(Q_{ext}\) cancels
+\(\sin\theta\) , so \(Q_{ext} \approx \sin\theta\) so their ratio will
+\$\rightarrow\$1. and \(\tau\) is:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{eff\PYZus{}lai} \PY{o}{=} \PY{l+m+mf}{2.1}
+         \PY{n}{forest\PYZus{}tau} \PY{o}{=} \PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1} \PY{o}{*} \PY{n}{eff\PYZus{}lai}\PY{p}{)}
+         \PY{n}{forest\PYZus{}tau}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}19}]:} 0.12245642825298191
+\end{Verbatim}
+        
+    So I estimate \(\tau\) = 0.12. This is consistent with my notes from
+class, which indicate that a good rule of thumb for \(\tau\) in forests
+is 0.1.
+
+For daily average incoming solar radiation and incoming longwave
+radiation fluxes to the sub-canopy floor under an adjacent pine canopy
+at this location on this day, incoming shortwave will be \(K^\ast\)
+times the transmittance, and net shortwave will be incoming shortwave
+times \((1 - \alpha)\):
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{subcanopy\PYZus{}shortwave\PYZus{}down} \PY{o}{=} \PY{n}{K\PYZus{}net} \PY{o}{*} \PY{n}{forest\PYZus{}tau}
+         \PY{n}{net\PYZus{}subcanopy\PYZus{}shortwave} \PY{o}{=} \PY{n}{subcanopy\PYZus{}shortwave\PYZus{}down} \PY{o}{*} \PY{p}{(}\PY{l+m+mf}{1.} \PY{o}{\PYZhy{}} \PY{n}{albedo}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{shortwave down to subcanopy }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{ W/m\PYZca{}2}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{subcanopy\PYZus{}shortwave\PYZus{}down}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{net subcanopy shortwave }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{ W/m\PYZca{}2}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{net\PYZus{}subcanopy\PYZus{}shortwave}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+shortwave down to subcanopy 22.26 W/m\^{}2
+net subcanopy shortwave 18.92 W/m\^{}2
+    \end{Verbatim}
+
+    The incoming longwave to the subcanopy will come from a combination of
+the sky and the trees. Sicart et al. 2006 (equation 6) found that
+terrain and vegetation emissions of longwave radiation could be
+represented as separate components weighted by sky view factor:
+
+\[L = V_f L_0 + (1 - V_f) \varepsilon_s \sigma T_{s}^4\]
+
+let:\\
+\(V_f\) = 0.2 (given)\\
+\(L_0\) = longwave from the cloudysky at 20°C from part iv,
+\(W m^{-2}\)\\
+\(\varepsilon_s\) = 0.98 emissivity of the forest, assume it is close to
+1, from Sicart ``terrain emissivity is close to 1 for snow and most
+natural surfaces''\\
+\(T_{s}\) = 20 + 273.15 \(K\) (same temperature as surrounding field)
+
+The outgoing longwave from the subcanopy floor will be the same as that
+from the surrounding field.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{sky\PYZus{}view\PYZus{}factor} \PY{o}{=} \PY{l+m+mf}{0.2}
+         \PY{n}{subcanopy\PYZus{}longwave\PYZus{}down} \PY{o}{=} \PY{n}{sky\PYZus{}view\PYZus{}factor} \PY{o}{*} \PY{n}{longwave\PYZus{}cloudysky\PYZus{}20} \PY{o}{+} \PYZbs{}
+                \PY{p}{(}\PY{l+m+mf}{1.} \PY{o}{\PYZhy{}} \PY{n}{sky\PYZus{}view\PYZus{}factor}\PY{p}{)} \PY{o}{*} \PY{n}{surface\PYZus{}emissivity} \PY{o}{*} \PY{n}{sigma} \PY{o}{*} \PY{n}{T\PYZus{}K}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4} 
+         \PY{n}{net\PYZus{}subcanopy\PYZus{}longwave} \PY{o}{=} \PY{n}{subcanopy\PYZus{}longwave\PYZus{}down} \PY{o}{\PYZhy{}} \PY{n}{longwave\PYZus{}up}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{longwave down to subcanopy }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{ W/m\PYZca{}2}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{subcanopy\PYZus{}longwave\PYZus{}down}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{longwave up from subcanopy }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{ W/m\PYZca{}2}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{longwave\PYZus{}up}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{net subcanopy longwave }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{ W/m\PYZca{}2}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{net\PYZus{}subcanopy\PYZus{}longwave}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+longwave down to subcanopy 408.83 W/m\^{}2
+longwave up from subcanopy 410.36 W/m\^{}2
+net subcanopy longwave -1.53 W/m\^{}2
+    \end{Verbatim}
+
+    So the subcanopy is losing longwave radiation.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{net\PYZus{}subcanopy} \PY{o}{=} \PY{n}{net\PYZus{}subcanopy\PYZus{}shortwave} \PY{o}{+} \PY{n}{net\PYZus{}subcanopy\PYZus{}longwave}
+\end{Verbatim}
+
+    Finally, the subcanopy net radiation \(Q^\ast = K^\ast + L^\ast\) =
+14.50 \(W m^{-1}\).
+
+    \subsection{Question 2}\label{question-2}
+
+Use equations presented in the paper by Harder and Pomeroy (2013) to
+estimate precipitation phase:
+
+During a precipitation measurement of 5 mm over an hour into a remote
+unattended Alter-shielded weighing precipitation gauge in a forested
+clearing you measure an air temperature of +1.0 C, RH of 60\%, with very
+low wind speed. What is the water equivalent depth of snowfall? What is
+the depth of rainfall?
+
+Harder and Pomeroy (2013) derive a psychrometric equation to derive
+phase change, expressed as rainfall fraction, \(f_r\), as a sigmoidal
+function:
+
+\[f_r(T_i) = \frac{1}{1 + b * c^{T_{i}}}\]
+
+where:\\
+\(b\), \(c\) = best fit coefficients, both are functions of time scale
+of measurement (15-min, hourly, daily)\\
+\(T_i\) = hydrometeor temperature
+
+An iterative solution for \(T_i\), Appendix eq. A.5, is:
+
+\[T_i = T_a + \frac{D}{\lambda_t}  L (\rho_{T_a} - \rho_{sat(T_i)})\]
+
+where:\\
+\(T_a\) = air temperature \([K]\)\\
+\(D\) = diffusivity of water vapour in air \([m^2 s^{-1}]\)\\
+\(\lambda_t\) = thermal conductivity of air
+\([J\ m^{-1} s^{-1} K^{-1}]\)\\
+\(L\) = latent heat of vaporisation or sublimation \([J\ kg^{-1}]\)\\
+\(\rho_{T_a}\) = water vapour density in the free atmosphere
+\([kg\ m^{-3}]\)\\
+\(\rho_{sat(T_i)}\) = saturated water vapour density at the hydrometeor
+surface \([kg\ m^{-3}]\)
+
+Since the wind speed is low, I will assume thermodynamic equilibrium.
+
+I am given \(T_a\) = 1.0 °\(C\) = 274.15 \(K\). For each of the next
+terms:
+
+\(D\): Following the appendix equation A.6 (Thorpe and Mason, 1966), I
+can estimate \(D [m^2 s^{-1}]\) as function of \(T_a [K]\):
+
+\[D = 2.06 * 10^{-5} * \left(\frac{T_a}{273.15}\right)^{1.75}\]
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}23}]:} \PY{n}{C\PYZus{}to\PYZus{}K\PYZus{}offset} \PY{o}{=} \PY{l+m+mf}{273.15}
+         \PY{n}{Tair\PYZus{}C} \PY{o}{=} \PY{l+m+mf}{1.0}  
+         \PY{n}{Tair\PYZus{}K} \PY{o}{=} \PY{n}{Tair\PYZus{}C} \PY{o}{+} \PY{n}{C\PYZus{}to\PYZus{}K\PYZus{}offset}
+         \PY{n}{D\PYZus{}m2ps} \PY{o}{=} \PY{l+m+mf}{2.06e\PYZhy{}5} \PY{o}{*} \PY{p}{(}\PY{n}{Tair\PYZus{}K}\PY{o}{/}\PY{l+m+mf}{273.15}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{1.75}
+         \PY{n}{C\PYZus{}to\PYZus{}K\PYZus{}offset}\PY{p}{,} \PY{n}{Tair\PYZus{}K}\PY{p}{,} \PY{n}{D\PYZus{}m2ps}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}23}]:} (273.15, 274.15, 2.0732159900990022e-05)
+\end{Verbatim}
+        
+    \(\lambda_t\): Following appendix equation A.9 (List, 1949), I can
+estimate \(\lambda_t\ [J m^{-1} s^{-1} K^{-1}]\) as function of
+\(T_a [K]\):
+
+\[\lambda_t = 0.000063 * T_a + 0.00673\]
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}24}]:} \PY{n}{lambda\PYZus{}t} \PY{o}{=} \PY{l+m+mf}{0.000063} \PY{o}{*} \PY{n}{Tair\PYZus{}K} \PY{o}{+} \PY{l+m+mf}{0.00673}
+         \PY{k}{print}\PY{p}{(}\PY{n}{D\PYZus{}m2ps}\PY{p}{,} \PY{n}{lambda\PYZus{}t}\PY{p}{,} \PY{n}{D\PYZus{}m2ps}\PY{o}{/}\PY{n}{lambda\PYZus{}t}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+(2.0732159900990022e-05, 0.024001449999999997, 0.0008637878086944757)
+    \end{Verbatim}
+
+    (I wasn't sure about temperature units in \(C\) or \(K\), but my value
+for the psychrometric exchange ratio, \(D/\lambda_t\), at 0 °C is
+consistent with the plot in Figure A1(b)).
+
+\(L\): Since the temperature is \textgreater{} 0 °C, I will use heat of
+vaporization, \(L_v [J\ kg^{-1}]\), equation A.11, as a function of
+\(T_a [C]\):
+
+\[L_v = 1000(2501 - (2.361 T))\]
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{n}{Lv\PYZus{}Jpkg} \PY{o}{=} \PY{l+m+mf}{1000.} \PY{o}{*} \PY{p}{(}\PY{l+m+mi}{2501} \PY{o}{\PYZhy{}} \PY{p}{(}\PY{l+m+mf}{2.361} \PY{o}{*} \PY{n}{Tair\PYZus{}C}\PY{p}{)}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Latent heat of vaporization = }\PY{l+s+si}{\PYZpc{}.2E}\PY{l+s}{ J/kg}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{Lv\PYZus{}Jpkg}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Latent heat of vaporization = 2.50E+06 J/kg
+    \end{Verbatim}
+
+    \(\rho_{T_a}\), \(\rho_{sat(T_s)}\) : To estimate water vapour density
+\([kg\ m^{-3}]\) in the free atmosphere, I calculate the water vapour
+pressure, e \([Pa]\), using Dingman (2015), eq 3.9a, p.113:
+
+\[e = \frac{RH}{100} * 611\ exp\left(\frac{17.27\ T}{T + 237.3}\right)\]
+
+where:\\
+RH = relative humidity = 70\%\\
+T = air temperature, \(°C\)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}26}]:} \PY{n}{RH} \PY{o}{=} \PY{l+m+mf}{60.}
+         \PY{n}{saturated\PYZus{}vapour\PYZus{}pressure\PYZus{}Pa} \PY{o}{=} \PY{l+m+mi}{611} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{p}{(}\PY{l+m+mf}{17.27} \PY{o}{*} \PY{n}{Tair\PYZus{}C}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{Tair\PYZus{}C} \PY{o}{+} \PY{l+m+mf}{237.3}\PY{p}{)}\PY{p}{)}
+         \PY{n}{free\PYZus{}air\PYZus{}vapour\PYZus{}pressure\PYZus{}Pa} \PY{o}{=} \PY{p}{(}\PY{n}{RH} \PY{o}{/} \PY{l+m+mf}{100.}\PY{p}{)} \PY{o}{*} \PY{n}{saturated\PYZus{}vapour\PYZus{}pressure\PYZus{}Pa}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{saturated vapour pressure [Pa] = }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{ Pa}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{saturated\PYZus{}vapour\PYZus{}pressure\PYZus{}Pa}\PY{p}{)}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{free air vapour pressure [Pa] for }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s}{ RH = }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s}{ Pa}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}
+                 \PY{n}{RH}\PY{p}{,} \PY{n}{free\PYZus{}air\PYZus{}vapour\PYZus{}pressure\PYZus{}Pa}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+saturated vapour pressure [Pa] = 656.92 Pa
+free air vapour pressure [Pa] for 60\% RH = 394.15 Pa
+    \end{Verbatim}
+
+    And then convert pressure to density using the ideal gas law (also from
+Appendix A.8):
+
+\[\rho = \frac{m_we}{RT}\]
+
+where:\\
+\(m_w\) = molecular weight of water = 0.01801528 \(kg\ mol^{-1}\)\\
+\(e\) = water vapour pressure, \(kPa\)\\
+\(R\) = Universal Gas Constant 8.31441 \(J\ mol^{-1}\ K^{-1}\)\\
+\(T\) = temperature \(K\)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{mw} \PY{o}{=} \PY{l+m+mf}{0.01801528}  \PY{c}{\PYZsh{} kg mol\PYZca{}\PYZhy{}1}
+         \PY{n}{R} \PY{o}{=} \PY{l+m+mf}{8.31441}      \PY{c}{\PYZsh{} J mol\PYZca{}\PYZhy{}1 K\PYZca{}\PYZhy{}1}
+         \PY{n}{Pa\PYZus{}per\PYZus{}kPa} \PY{o}{=} \PY{l+m+mf}{1000.}  \PY{c}{\PYZsh{} conversion}
+         \PY{n}{saturated\PYZus{}vapour\PYZus{}density\PYZus{}kgpm3} \PY{o}{=} \PY{p}{(}
+             \PY{n}{mw} \PY{o}{*} \PY{n}{saturated\PYZus{}vapour\PYZus{}pressure\PYZus{}Pa} \PY{o}{/} \PY{n}{Pa\PYZus{}per\PYZus{}kPa}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{R} \PY{o}{*} \PY{n}{Tair\PYZus{}K}\PY{p}{)}
+         \PY{n}{free\PYZus{}air\PYZus{}vapour\PYZus{}density\PYZus{}kgpm3} \PY{o}{=} \PY{p}{(}
+             \PY{n}{mw} \PY{o}{*} \PY{n}{free\PYZus{}air\PYZus{}vapour\PYZus{}pressure\PYZus{}Pa} \PY{o}{/} \PY{n}{Pa\PYZus{}per\PYZus{}kPa}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{R} \PY{o}{*} \PY{n}{Tair\PYZus{}K}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{saturated water vapour density = }\PY{l+s+si}{\PYZpc{}.2E}\PY{l+s}{ kg m\PYZca{}\PYZhy{}3}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{saturated\PYZus{}vapour\PYZus{}density\PYZus{}kgpm3}\PY{p}{)}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{free air water vapour density for }\PY{l+s+si}{\PYZpc{}d}\PY{l+s}{ }\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s}{ RH = }\PY{l+s+si}{\PYZpc{}.2E}\PY{l+s}{ kg m\PYZca{}\PYZhy{}3}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}
+                 \PY{n}{RH}\PY{p}{,} \PY{n}{free\PYZus{}air\PYZus{}vapour\PYZus{}density\PYZus{}kgpm3}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+saturated water vapour density = 5.19E-06 kg m\^{}-3
+free air water vapour density for 60 \% RH = 3.12E-06 kg m\^{}-3
+    \end{Verbatim}
+
+    Solving for hydrometeor temperature:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}28}]:} \PY{n}{T\PYZus{}i} \PY{o}{=} \PY{n}{Tair\PYZus{}C} \PY{o}{+} \PY{p}{(}\PY{n}{D\PYZus{}m2ps}\PY{o}{/}\PY{n}{lambda\PYZus{}t}\PY{p}{)} \PY{o}{*} \PY{n}{Lv\PYZus{}Jpkg} \PY{o}{*} \PY{p}{(}
+             \PY{n}{free\PYZus{}air\PYZus{}vapour\PYZus{}density\PYZus{}kgpm3} \PY{o}{\PYZhy{}} \PY{n}{saturated\PYZus{}vapour\PYZus{}density\PYZus{}kgpm3}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{hydrometeor temperature = }\PY{l+s+si}{\PYZpc{}.2E}\PY{l+s}{ deg\PYZhy{}C}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{T\PYZus{}i}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+hydrometeor temperature = 9.96E-01 deg-C
+    \end{Verbatim}
+
+    And finally, using b and c from middle plot (hourly) of Fig. 6:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}29}]:} \PY{n}{b} \PY{o}{=} \PY{l+m+mf}{2.50286}
+         \PY{n}{c} \PY{o}{=} \PY{l+m+mf}{0.125006}
+         \PY{n}{rainfall\PYZus{}fraction} \PY{o}{=} \PY{l+m+mf}{1.} \PY{o}{/} \PY{p}{(}\PY{l+m+mf}{1.} \PY{o}{+} \PY{p}{(}\PY{n}{b} \PY{o}{*} \PY{n}{c}\PY{o}{*}\PY{o}{*}\PY{n}{T\PYZus{}i}\PY{p}{)}\PY{p}{)}
+         \PY{n}{precip\PYZus{}mm} \PY{o}{=} \PY{l+m+mi}{5}
+         \PY{k}{print}\PY{p}{(}\PY{n}{rainfall\PYZus{}fraction}\PY{p}{,} \PY{n}{rainfall\PYZus{}fraction} \PY{o}{*} \PY{n}{precip\PYZus{}mm}\PY{p}{,} \PYZbs{}
+               \PY{p}{(}\PY{p}{(}\PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{rainfall\PYZus{}fraction}\PY{p}{)} \PY{o}{*} \PY{n}{precip\PYZus{}mm}\PY{p}{)}\PY{p}{)}
+                                   
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+(0.75999258631298428, 3.7999629315649215, 1.2000370684350785)
+    \end{Verbatim}
+
+    So given a gauge precip measurement of 5 \(mm\), I estimate it fell as
+3.8 \(mm\) of rainfall, and 1.2 \(mm\) water equivalent from snowfall.
+
+    \subsection{Question 3}\label{question-3}
+
+You are measuring air temperature and water vapour content over a
+natural grassland (roughness length = 0.03 m) to get an idea of how
+available energy is being used at this site. You have installed the
+minimum of two levels of measurements of wind speed, temperature and
+humidity. The daily average measurements are (heights above the ground):
+- 1-m height, wind speed is 0.6 \(m\ s^{-1}\), air temperature 20
+\(^oC\), and vapour pressure 2.0 \(kPa\);\\
+- 2-m height, wind speed is 0.62 \(m\ s^{-1}\), air temperature 19
+\(^oC\), and vapour pressure 1.5 \(kPa\).
+
+Assume Pa = 101.3 kPa, \(\rho_a\) = 1.2 \(kg\ m^{-3}\), and \(c_p\) =
+1005 \(J\ kg^{-1} K^{-1}\) and \(L_v\) = 2.454 \(MJ\ kg^{-1}\).\\
+(a) Estimate a \(z_0\) for momentum, heat and water vapour from the
+vegetation height. Then using bulk transfer flux-gradient calculations
+(example in Helgason and Pomeroy, 1995) and ignoring stability
+corrections find \(Q_E\) and \(Q_H\).\\
+(b) Calculate the footprint representative of these measurements which
+accounts for 80\% of the flux. Recall that you will first need to
+calculate u*.
+
+Per Helgason and Pomeroy, 2005, a typical method to estimate momentum
+roughness length \(z_{0m}\) is to plot \(ln(z)\) vs. \(\bar{u}\) for
+neutral conditions and then determine the value of \(z_{0m}\) as the
+y-intercept where \(\bar{u}\) =0.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}62}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
+         
+         \PY{n}{u1} \PY{o}{=} \PY{l+m+mf}{0.6}  \PY{c}{\PYZsh{} m/s}
+         \PY{n}{u2} \PY{o}{=} \PY{l+m+mf}{0.62} \PY{c}{\PYZsh{} m/s}
+         \PY{n}{z1} \PY{o}{=} \PY{l+m+mf}{1.0}  \PY{c}{\PYZsh{} m}
+         \PY{n}{z2} \PY{o}{=} \PY{l+m+mf}{2.0}  \PY{c}{\PYZsh{} m}
+         
+         \PY{c}{\PYZsh{} quick linear interpolation function}
+         \PY{c}{\PYZsh{} returns slope and intercept}
+         \PY{k}{def} \PY{n+nf}{linear\PYZus{}model\PYZus{}parms}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{n}{y1}\PY{p}{,} \PY{n}{x2}\PY{p}{,} \PY{n}{y2}\PY{p}{)}\PY{p}{:}
+             \PY{n}{slope} \PY{o}{=} \PY{p}{(}\PY{n}{y2} \PY{o}{\PYZhy{}} \PY{n}{y1}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{x2} \PY{o}{\PYZhy{}} \PY{n}{x1}\PY{p}{)}
+             \PY{c}{\PYZsh{} y = mx + b ==\PYZgt{} b = y \PYZhy{} mx}
+             \PY{n}{intercept} \PY{o}{=}  \PY{n}{y1} \PY{o}{\PYZhy{}} \PY{p}{(}\PY{n}{slope} \PY{o}{*} \PY{n}{x1}\PY{p}{)}
+             \PY{k}{return} \PY{p}{\PYZob{}}\PY{l+s}{\PYZsq{}}\PY{l+s}{m}\PY{l+s}{\PYZsq{}}\PY{p}{:}\PY{n}{slope}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{b}\PY{l+s}{\PYZsq{}}\PY{p}{:}\PY{n}{intercept}\PY{p}{\PYZcb{}}
+         
+         \PY{n}{parms} \PY{o}{=} \PY{n}{linear\PYZus{}model\PYZus{}parms}\PY{p}{(}\PY{n}{u1}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{z1}\PY{p}{)}\PY{p}{,} \PY{n}{u2}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{z2}\PY{p}{)}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{y\PYZhy{}intercept: ln(z) = }\PY{l+s+si}{\PYZpc{}f}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{parms}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{b}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+         
+         \PY{c}{\PYZsh{} Make the plot:}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{rc}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{text}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{usetex}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+         \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{n}{u1}\PY{p}{,} \PY{n}{u2}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{z1}\PY{p}{)}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{z2}\PY{p}{)}\PY{p}{]}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{co\PYZhy{}}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{c}{\PYZsh{}ax.set\PYZus{}title(\PYZdq{}\PYZdl{}ln(z) vs. \PYZbs{}bar\PYZob{}u\PYZcb{}\PYZdq{})}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Averge wind speed \PYZdl{}(m}\PY{l+s}{\PYZbs{}}\PY{l+s}{ s\PYZca{}\PYZob{}\PYZhy{}1\PYZcb{})\PYZdl{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdl{}ln(z)\PYZdl{}}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.63}\PY{p}{]}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{]}\PY{p}{)}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+         \PY{n}{fig}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{HW1.3\PYZus{}fig1.png}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+y-intercept: ln(z) = -20.794415
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Brodzik_assignment1_files/Brodzik_assignment1_62_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Solving for the corresponding height:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}71}]:} \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Momentum roughness length z\PYZus{}0m = }\PY{l+s+si}{\PYZpc{}e}\PY{l+s}{ meters}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{parms}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{b}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Momentum roughness length z\_0m = 9.313226e-10 meters
+    \end{Verbatim}
+
+    So my calculated momentum roughness length is about 10 Angstroms, which
+seems impossibly small. But I am unsure as to what I've done wrong,
+here.
+
+Taking a different approach, the problem states that the roughness
+length is 0.03 m. Using Dingman eq (3.28 and 3.29), p.~122, if this
+roughness length is \(z_0\), then the average vegetation height
+\(z_{veg}\) = 0.3 m = 30 cm , which seems reasonable for a ``natural
+grassland''. And, the zero-plane displacement height, \(z_d\) is
+therefore 0.7 * 0.3 = 0.21 m.
+
+Using equation 3.30b to estimate friction velocity, \(u^*\):
+
+\[u^* = \frac{\kappa [u(z_2) - u(z_1)]}{ln(\frac{z_2 - z_d}{z_1 - z_d})}\]
+
+where:
+
+\(\kappa\) = 0.4
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}74}]:} \PY{n}{z\PYZus{}veg} \PY{o}{=} \PY{l+m+mf}{10.} \PY{o}{*} \PY{l+m+mf}{0.03}
+         \PY{n}{z\PYZus{}d} \PY{o}{=} \PY{l+m+mf}{0.7} \PY{o}{*} \PY{n}{z\PYZus{}veg}
+         \PY{n}{kappa} \PY{o}{=} \PY{l+m+mf}{0.4}
+         \PY{n}{friction\PYZus{}u} \PY{o}{=} \PY{p}{(}\PY{n}{kappa} \PY{o}{*} \PY{p}{(}\PY{n}{u2} \PY{o}{\PYZhy{}} \PY{n}{u1}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{p}{(}\PY{n}{z2} \PY{o}{\PYZhy{}} \PY{n}{z\PYZus{}d}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{z1} \PY{o}{\PYZhy{}} \PY{n}{z\PYZus{}d}\PY{p}{)}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{friction velocity u* = }\PY{l+s+si}{\PYZpc{}f}\PY{l+s}{ m/s}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{friction\PYZus{}u}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+friction velocity u* = 0.009781 m/s
+    \end{Verbatim}
+
+    So I estimate the friction velocity \(u^*\) = 0.0098 \(m\ s^{-1}\)
+
+    Using Dingman eq. 3.35, the momentum flux is:
+
+\[F_M = - \rho_a\ {u^*}^2\]
+
+Letting
+
+\(\rho_a\) = 1.2 \(kg\ m^{-3}\)
+
+\(u^*\) = friction velocity \(m\ s^{-1}\)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}77}]:} \PY{c}{\PYZsh{} Units kg/m3 * m2/s2 = kg/m/s2  ?? flux units make sense,}
+         \PY{c}{\PYZsh{}                                   kg m/s per unit area per unit time}
+         \PY{n}{rho\PYZus{}a} \PY{o}{=} \PY{l+m+mf}{1.2} \PY{c}{\PYZsh{} kg/m\PYZhy{}3}
+         \PY{n}{momentum\PYZus{}flux} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1} \PY{o}{*} \PY{n}{rho\PYZus{}a} \PY{o}{*} \PY{n}{friction\PYZus{}u}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Momentum flux is }\PY{l+s+si}{\PYZpc{}f}\PY{l+s}{ kg/m/s\PYZca{}2}\PY{l+s}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{momentum\PYZus{}flux}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Momentum flux is -0.011737 kg/m/s\^{}2
+    \end{Verbatim}
+
+    To calculate latent heat flux \(Q_E\), I think I would need to use
+Dingman eq 3.47, but I've gotten thoroughly confused and don't
+understand what \(z_m\) is supposed to represent.
+
+To calculate sensible heat flux \(Q_H\), I think I would need to use
+Dingman eq 3.57, but again, I can't figure out what \(z_m\) represents.
+
+    (Problems 4 and 5 not attempted.)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} 
+\end{Verbatim}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
