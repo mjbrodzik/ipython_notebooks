@@ -5,3 +5,9 @@ Downloaded example from
 Another resource that explains it very nicely is:
 
 katrinaeg.com/simulated-annealing.html
+
+For tips on choosing new random solutions:
+
+https://stackoverflow.com/questions/45449762/how-to-find-neighboring-solutions-in-simulated-annealing
+
+
