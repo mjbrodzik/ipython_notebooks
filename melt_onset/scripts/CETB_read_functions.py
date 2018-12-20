@@ -227,15 +227,16 @@ def find_WesternUS_cube_offset(cubeType=None, verbose=False):
     return row_offset, col_offset 
 
 # offset for Upper Indus Basin (UIB) cubes
-def find_UIB_cube_offset(cubeType=None, verbose=False):
+# FIXME: Just do a glob.glob and open first 36V-SIR file
+def find_UIB_cube_offset(cubeDir, cubeType=None, verbose=False):
     if not cubeType:
         cubeType = '36V-SIR'
         
     cubeFile = "%s%s%s%s" % (
-        "/home/mij216/Desktop/data3/cetb/cubes/AQUA_AMSRE/UIB/",
-        "CETB.cubefile.UIB.AQUA_AMSRE-",
-        cubeType,
-        "-RSS-v1.3.2003.TB.nc")
+            cubeDir,
+            "CETB.cubefile.UIB.AQUA_AMSRE-",
+            cubeType,
+            "-RSS-v1.3.2003.TB.nc")
         
     f = Dataset(cubeFile, "r", "NETCDF4")   
     lats = f.variables['latitude'][:]
@@ -243,7 +244,7 @@ def find_UIB_cube_offset(cubeType=None, verbose=False):
     baseGPD = f.variables['crs'].long_name
     f.close() 
 
-# find and return the baseGPD (row, col) offset for cubeUL(0, 0) location
+    # find and return the baseGPD (row, col) offset for cubeUL(0, 0) location
     grid = Ease2Transform(baseGPD)
     row_offset, col_offset = grid.geographic_to_grid(lats[0,0], lons[0,0])
 
