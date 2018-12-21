@@ -261,16 +261,6 @@ def MOD_array_year(datadir, prefix, CETB_data, DAV,
     matrix = pd.DataFrame(data=newdata, columns=col_names)
     matrix=matrix.set_index(cal_date)
 
-    #index with dates (two rows per day)
-    #index with morning and evening offset (necessary for plotting)
-    #FIXME: this was only needed for earlier versions of cube data
-    m_index=matrix[0::2].index+pd.DateOffset(hours=9)
-    e_index=matrix[1::2].index+pd.DateOffset(hours=18)
-    t_index=np.append(m_index,e_index)
-    t_index=np.sort(t_index)
-    matrix=matrix.set_index(t_index)
-
-
     # MOD algorithm - calculate sum on a rolling window
     # (window= no. of obs, 2 per day)
     matrix=matrix.rolling(window).sum()
